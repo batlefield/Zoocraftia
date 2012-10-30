@@ -2,14 +2,13 @@ package net.zoocraftia.core.network;
 
 import java.util.Arrays;
 
+import net.minecraft.src.INetworkManager;
 import net.minecraft.src.NetHandler;
-import net.minecraft.src.NetworkManager;
 
 import com.google.common.primitives.Bytes;
 import com.google.common.primitives.UnsignedBytes;
 
 import cpw.mods.fml.common.network.FMLNetworkHandler;
-import cpw.mods.fml.common.network.FMLPacket;
 import cpw.mods.fml.common.network.Player;
 
 public abstract class ZoocraftiaPacket {
@@ -65,5 +64,6 @@ public abstract class ZoocraftiaPacket {
 
     public abstract ZoocraftiaPacket consumePacket(byte[] data);
 
-    public abstract void execute(NetworkManager network, Player player);
+    public abstract void execute(INetworkManager network, Player player);
+
 }

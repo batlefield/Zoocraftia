@@ -69,7 +69,7 @@ public class ZoocraftiaMain {
 	public static boolean getOrCreateBooleanProperty(String key,boolean defaultVal, String category, String comment)
 	{
 		config.load();
-		Property prop = config.getOrCreateBooleanProperty(key, category, defaultVal);
+		Property prop = config.get(category, key, defaultVal);
 		if(!MathHelper.stringNullOrLengthZero(comment))
 		{
 			prop.comment = comment;

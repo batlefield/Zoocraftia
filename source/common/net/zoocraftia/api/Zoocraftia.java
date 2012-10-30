@@ -52,7 +52,7 @@ public class Zoocraftia {
 	private static int getOrCreatGuiID(Class<? extends GuiScreen> cls, int i)
 	{
 		guiConfig.load();
-		int ret = new Integer(guiConfig.getOrCreateIntProperty(cls.getSimpleName(), "guiids", i).value).intValue();
+		int ret = new Integer(guiConfig.get(cls.getSimpleName(), "guiids", i).value).intValue();
 		guiConfig.save();
 		return ret;
 		
@@ -95,7 +95,7 @@ public class Zoocraftia {
 			{
 				lang.categories.put(type, new TreeMap<String, Property>());
 			}
-			s = lang.getOrCreateProperty(mcName, type, name).value;
+			s = lang.get(mcName, type, name).value;
 		}
 		lang.save();
 		ModLoader.addLocalization(mcName, name);

@@ -37,7 +37,7 @@ public class ZoocraftiaCore {
 	public static int getOrCreateBlockID(String block, int id)
 	{
 		config.load();
-		Property prop = config.getOrCreateBlockIdProperty(block, id);
+		Property prop = config.getBlock(block, id);
 		config.save();
 		if(!prop.isIntValue())
 		{
@@ -49,7 +49,7 @@ public class ZoocraftiaCore {
 	public static int getOrCreatItemID(String item, int id)
 	{
 		config.load();
-		Property prop = config.getOrCreateIntProperty(item, config.CATEGORY_ITEM, id);
+		Property prop = config.getItem(item, id);
 		config.save();
 		if(!prop.isIntValue())
 		{
@@ -61,7 +61,7 @@ public class ZoocraftiaCore {
 	public static int getOrCreatEntityID(String entity, int id)
 	{
 		config.load();
-		Property prop = config.getOrCreateIntProperty(entity, "entity", id);
+		Property prop = config.get("entity", entity, id);
 		config.save();
 		if(!prop.isIntValue())
 		{
@@ -107,7 +107,7 @@ public class ZoocraftiaCore {
 		ZoocraftiaBlocks.tropicGround = (new GroundBlock(getOrCreateBlockID("Tropic", 3007), Material.grass)).setHardness(0.6F).setStepSound(Block.soundGrassFootstep).setBlockName("tropic");
 		ZoocraftiaBlocks.mesa = (new GroundBlock(getOrCreateBlockID("Mesa", 3008), Material.grass)).setHardness(0.6F).setStepSound(Block.soundStoneFootstep).setBlockName("mesa");
 		ZoocraftiaBlocks.sapling = (new BlockSapling(getOrCreateBlockID("Sapling", 3009)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setBlockName("sapling"));
-		ZoocraftiaBlocks.acorns = (new BlockAcorns(getOrCreateBlockID("Acorns", 3010), 14).setBlockName("acorns").setStepSound(Block.soundWoodFootstep).setHardness(0.0F).setCreativeTab(CreativeTabs.tabDeco));
+		ZoocraftiaBlocks.acorns = (new BlockAcorns(getOrCreateBlockID("Acorns", 3010), 14).setBlockName("acorns").setStepSound(Block.soundWoodFootstep).setHardness(0.0F).setCreativeTab(CreativeTabs.tabDecorations));
 		ZoocraftiaBlocks.asphalt = (new DefaultBlock(getOrCreateBlockID("Asphalt", 3011), 7, Material.rock).setBlockName("asphalt").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep));
 		ZoocraftiaBlocks.concrete = (new DefaultBlock(getOrCreateBlockID("Concrete", 3012), 8, Material.rock).setBlockName("concrete").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep));
 		ZoocraftiaBlocks.quicksand = (new BlockQuicksand(getOrCreateBlockID("Quicksand", 3013), 11)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setBlockName("quicksand").setCreativeTab(CreativeTabs.tabBlock);
@@ -150,10 +150,10 @@ public class ZoocraftiaCore {
 		
 		//Item initialization
 		ZoocraftiaItems.meat = new ItemMeat(getOrCreatItemID("Meat", 12000)).setItemName("meat");
-		ZoocraftiaItems.dart = new DefaultItem(getOrCreatItemID("Dart", 12001), false).setItemName("Dart").setIconIndex(18).setTabToDisplayOn(CreativeTabs.tabCombat);
-		ZoocraftiaItems.tagGun = new ItemTagGun(getOrCreatItemID("TagGun", 12002)).setItemName("TagGun").setIconIndex(7).setTabToDisplayOn(CreativeTabs.tabCombat);
-		ZoocraftiaItems.saltwaterBucket = new ZoocraftiaBucketSaltwater(getOrCreatItemID("SaltwaterBucket", 12003), ZoocraftiaBlocks.saltwaterMoving.blockID).setItemName("SaltwaterBucket").setIconIndex(1).setTabToDisplayOn(CreativeTabs.tabMisc);
-		ZoocraftiaItems.coin = new ZoocraftiaCoin(getOrCreatItemID("Coin", 12004)).setItemName("Coin").setTabToDisplayOn(CreativeTabs.tabMisc);
+		ZoocraftiaItems.dart = new DefaultItem(getOrCreatItemID("Dart", 12001), false).setItemName("Dart").setIconIndex(18).setCreativeTab(CreativeTabs.tabCombat);
+		ZoocraftiaItems.tagGun = new ItemTagGun(getOrCreatItemID("TagGun", 12002)).setItemName("TagGun").setIconIndex(7).setCreativeTab(CreativeTabs.tabCombat);
+		ZoocraftiaItems.saltwaterBucket = new ZoocraftiaBucketSaltwater(getOrCreatItemID("SaltwaterBucket", 12003), ZoocraftiaBlocks.saltwaterMoving.blockID).setItemName("SaltwaterBucket").setIconIndex(1).setCreativeTab(CreativeTabs.tabMisc);
+		ZoocraftiaItems.coin = new ZoocraftiaCoin(getOrCreatItemID("Coin", 12004)).setItemName("Coin").setCreativeTab(CreativeTabs.tabMisc);
 		
 		//Item naming
 		Zoocraftia.addName(ZoocraftiaItems.saltwaterBucket, "Saltwater Bucket");

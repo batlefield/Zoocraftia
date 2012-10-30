@@ -95,7 +95,7 @@ public class ZoocraftiaEntityRender extends Render
             this.preRenderCallback(par1EntityLiving, par9);
             GL11.glTranslatef(0.0F, -24.0F * var14 - 0.0078125F, 0.0F);
             float var15 = par1EntityLiving.prevLegYaw + (par1EntityLiving.legYaw - par1EntityLiving.prevLegYaw) * par9;
-            float var16 = par1EntityLiving.field_70754_ba - par1EntityLiving.legYaw * (1.0F - par9);
+            float var16 = par1EntityLiving.legSwing - par1EntityLiving.legYaw * (1.0F - par9);
 
             if (par1EntityLiving.isChild())
             {
@@ -568,7 +568,7 @@ public class ZoocraftiaEntityRender extends Render
 
         if (par1Block.renderAsNormalBlock())
         {
-            double var20 = ((double)par11 - (par4 - ((double)par9 + par15)) / 2.0D) * 0.5D * (double)renderManager.worldObj.getLightBrightness(par8, par9, par10);
+            double var20 = ((double)par11 - (par4 - ((double)par9 + par15)) / 2.0D) * 0.5D * (double)this.renderManager.worldObj.getLightBrightness(par8, par9, par10);
 
             if (var20 >= 0.0D)
             {
@@ -578,11 +578,11 @@ public class ZoocraftiaEntityRender extends Render
                 }
 
                 var19.setColorRGBA_F(1.0F, 1.0F, 1.0F, (float)var20);
-                double var22 = (double)par8 + par1Block.minX + par13;
-                double var24 = (double)par8 + par1Block.maxX + par13;
-                double var26 = (double)par9 + par1Block.minY + par15 + 0.015625D;
-                double var28 = (double)par10 + par1Block.minZ + par17;
-                double var30 = (double)par10 + par1Block.maxZ + par17;
+                double var22 = (double)par8 + par1Block.func_83009_v() + par13;
+                double var24 = (double)par8 + par1Block.func_83007_w() + par13;
+                double var26 = (double)par9 + par1Block.func_83008_x() + par15 + 0.015625D;
+                double var28 = (double)par10 + par1Block.func_83005_z() + par17;
+                double var30 = (double)par10 + par1Block.func_83006_A() + par17;
                 float var32 = (float)((par2 - var22) / 2.0D / (double)par12 + 0.5D);
                 float var33 = (float)((par2 - var24) / 2.0D / (double)par12 + 0.5D);
                 float var34 = (float)((par6 - var28) / 2.0D / (double)par12 + 0.5D);

@@ -1,7 +1,7 @@
 package net.zoocraftia.core.network;
 
 import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.NetworkManager;
+import net.minecraft.src.INetworkManager;
 import net.zoocraftia.api.Zoocraftia;
 
 import com.google.common.io.ByteArrayDataInput;
@@ -34,7 +34,7 @@ public class MoneyPacket extends ZoocraftiaPacket{
 	}
 
 	@Override
-	public void execute(NetworkManager network, Player player) {
+	public void execute(INetworkManager network, Player player) {
 		EntityPlayer player1 = (EntityPlayer) player;
 		Zoocraftia.MONEY_MANAGER.setMoney(player1, money);
 	}

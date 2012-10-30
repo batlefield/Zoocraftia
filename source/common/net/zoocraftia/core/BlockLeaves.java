@@ -27,7 +27,7 @@ public class BlockLeaves extends Block implements IShearable
     {
         super(par1, Material.leaves);
         this.setTickRandomly(true);
-        this.setCreativeTab(CreativeTabs.tabDeco);
+        this.setCreativeTab(CreativeTabs.tabDecorations);
         setRequiresSelfNotify();
     }
     
@@ -236,7 +236,7 @@ public class BlockLeaves extends Block implements IShearable
     /**
      * Determines the damage on the item the block drops. Used in cloth and wood.
      */
-    protected int damageDropped(int par1)
+    public int damageDropped(int par1)
     {
         return par1 & 4;
     }

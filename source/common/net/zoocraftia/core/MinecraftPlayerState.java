@@ -18,7 +18,7 @@ public class MinecraftPlayerState {
 				ok = true;
 			}catch(Exception e){return false;}
 			
-			return ZoocraftiaMain.proxy instanceof ClientProxy && ok && Minecraft.getMinecraft().isSingleplayer() && !Minecraft.getMinecraft().getIntegratedServer().func_71344_c();
+			return ZoocraftiaMain.proxy instanceof ClientProxy && ok && Minecraft.getMinecraft().isSingleplayer() && !Minecraft.getMinecraft().getIntegratedServer().getPublic();
 		}catch(Exception e)
 		{
 			return false;
@@ -35,7 +35,7 @@ public class MinecraftPlayerState {
 			}catch(Exception e){return false;}
 			
 			try{
-				return ZoocraftiaMain.proxy instanceof ClientProxy && ok && !Minecraft.getMinecraft().isSingleplayer() && Minecraft.getMinecraft().getIntegratedServer().func_71344_c();
+				return ZoocraftiaMain.proxy instanceof ClientProxy && ok && !Minecraft.getMinecraft().isSingleplayer() && Minecraft.getMinecraft().getIntegratedServer().getPublic();
 			}catch(Exception e)
 			{
 				return false;

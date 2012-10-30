@@ -15,7 +15,7 @@ public class ItemMeat extends ItemFood{
 		super(par1, 4, false);
 		setHasSubtypes(true);
 		setMaxDamage(0);
-		setTabToDisplayOn(CreativeTabs.tabFood);
+		setCreativeTab(CreativeTabs.tabFood);
 		setAlwaysEdible();
 	}
 	

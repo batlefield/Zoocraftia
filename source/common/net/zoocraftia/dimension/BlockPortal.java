@@ -7,16 +7,19 @@ import net.minecraft.src.BlockBreakable;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Entity;
 import net.minecraft.src.EntityPlayer;
+import net.minecraft.src.EntityPlayerMP;
 import net.minecraft.src.IBlockAccess;
 import net.minecraft.src.Material;
 import net.minecraft.src.World;
 import net.zoocraftia.core.ZoocraftiaBlocks;
 import net.zoocraftia.dimension.client.EntityPortalFX;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;
 
 public class BlockPortal extends BlockBreakable
 {
+	private static boolean teleported = false;
     public BlockPortal(int par1, int par2)
     {
         super(par1, par2, Material.portal, false);
@@ -147,11 +150,17 @@ public class BlockPortal extends BlockBreakable
     {
         if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null)
         {
-            if(par5Entity instanceof EntityPlayer)
+            /*if(par5Entity instanceof EntityPlayer)
             {
             	ZoocraftiaDimensionMain.proxy.setInPortal((EntityPlayer) par5Entity);
-            }
-        }
+            }*/
+        	
+        	if(par5Entity instanceof EntityPlayerMP && !teleported)
+        	{
+        		teleported = true;
+        		FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager().transferPlayerToDimension((EntityPlayerMP) par5Entity, ZoocraftiaDimensionMain.dimensionID, new ZoocraftiaTeleporter());
+        	}
+    	}
     }
 
     @SideOnly(Side.CLIENT)

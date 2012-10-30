@@ -5,7 +5,6 @@ import java.util.Random;
 
 import net.minecraft.src.BiomeGenBase;
 import net.minecraft.src.Block;
-import net.minecraft.src.BlockSand;
 import net.minecraft.src.Chunk;
 import net.minecraft.src.ChunkPosition;
 import net.minecraft.src.EnumCreatureType;
@@ -20,10 +19,8 @@ import net.minecraft.src.MapGenStronghold;
 import net.minecraft.src.MapGenVillage;
 import net.minecraft.src.MathHelper;
 import net.minecraft.src.NoiseGeneratorOctaves;
-import net.minecraft.src.SpawnerAnimals;
 import net.minecraft.src.World;
-import net.minecraft.src.WorldGenDungeons;
-import net.minecraft.src.WorldGenLakes;
+import net.zoocraftia.core.ZoocraftiaBlocks;
 
 public class ChunkProviderZoocraftia implements IChunkProvider
 {
@@ -64,7 +61,7 @@ public class ChunkProviderZoocraftia implements IChunkProvider
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
 
     /** Holds Village Generator */
-    private MapGenVillage villageGenerator = new MapGenVillage(0);
+    private MapGenVillage villageGenerator = new MapGenVillage();
 
     /** Holds Mineshaft Generator */
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
@@ -167,7 +164,7 @@ public class ChunkProviderZoocraftia implements IChunkProvider
                                 }
                                 else if (var12 * 8 + var31 < var6)
                                 {
-                                    par3ArrayOfByte[var43 += var44] = (byte)Block.waterStill.blockID;
+                                    par3ArrayOfByte[var43 += var44] = (byte)ZoocraftiaBlocks.saltwaterStill.blockID;
                                 }
                                 else
                                 {
@@ -248,7 +245,7 @@ public class ChunkProviderZoocraftia implements IChunkProvider
                                     }
                                     else
                                     {
-                                        var14 = (byte)Block.waterStill.blockID;
+                                        var14 = (byte)ZoocraftiaBlocks.saltwaterStill.blockID;
                                     }
                                 }
 
@@ -487,7 +484,7 @@ public class ChunkProviderZoocraftia implements IChunkProvider
      */
     public void populate(IChunkProvider par1IChunkProvider, int par2, int par3)
     {
-        BlockSand.fallInstantly = true;
+        /*BlockSand.fallInstantly = true;
         int var4 = par2 * 16;
         int var5 = par3 * 16;
         BiomeGenBase var6 = this.worldObj.getBiomeGenForCoords(var4 + 16, var5 + 16);
@@ -541,12 +538,7 @@ public class ChunkProviderZoocraftia implements IChunkProvider
             }
         }
 
-        try{
-        	var6.decorate(this.worldObj, this.rand, var4, var5);
-        }catch(RuntimeException e)
-        {
-        	
-        }
+        var6.decorate(this.worldObj, this.rand, var4, var5);
         SpawnerAnimals.performWorldGenSpawning(this.worldObj, var6, var4 + 8, var5 + 8, 16, 16, this.rand);
         var4 += 8;
         var5 += 8;
@@ -569,7 +561,7 @@ public class ChunkProviderZoocraftia implements IChunkProvider
             }
         }
 
-        BlockSand.fallInstantly = false;
+        BlockSand.fallInstantly = false;*/
     }
 
     /**
@@ -627,4 +619,15 @@ public class ChunkProviderZoocraftia implements IChunkProvider
     {
         return 0;
     }
+
+	@Override
+	public void func_82695_e(int par1, int par2) {
+		if (this.mapFeaturesEnabled)
+        {
+            this.mineshaftGenerator.generate(this, this.worldObj, par1, par2, (byte[])null);
+            this.villageGenerator.generate(this, this.worldObj, par1, par2, (byte[])null);
+            this.strongholdGenerator.generate(this, this.worldObj, par1, par2, (byte[])null);
+            this.scatteredFeatureGenerator.generate(this, this.worldObj, par1, par2, (byte[])null);
+        }
+	}
 }

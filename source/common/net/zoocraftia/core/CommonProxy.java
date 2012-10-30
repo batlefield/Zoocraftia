@@ -46,7 +46,7 @@ public class CommonProxy implements IGuiHandler{
 		
 		if(MinecraftPlayerState.getPlayerState(player) == PlayerState.SMP)
 		{
-			((EntityPlayerMP)player).serverForThisPlayer.sendPacketToPlayer(packet);
+			((EntityPlayerMP)player).playerNetServerHandler.sendPacketToPlayer(packet);
 		}
 	}
 	
@@ -59,7 +59,7 @@ public class CommonProxy implements IGuiHandler{
 		
 		if(MinecraftPlayerState.getPlayerState(player) == PlayerState.SMP)
 		{
-			((EntityPlayerMP)player).serverForThisPlayer.sendPacketToPlayer(packet);
+			((EntityPlayerMP)player).playerNetServerHandler.sendPacketToPlayer(packet);
 		}
 	}
 	
@@ -74,7 +74,7 @@ public class CommonProxy implements IGuiHandler{
 			
 			if(MinecraftPlayerState.getPlayerState(player) == PlayerState.SMP)
 			{
-				((EntityPlayerMP)player).serverForThisPlayer.sendPacketToPlayer(packet);
+				((EntityPlayerMP)player).playerNetServerHandler.sendPacketToPlayer(packet);
 			}
 		}
 	}
@@ -88,7 +88,7 @@ public class CommonProxy implements IGuiHandler{
 
 		if(MinecraftPlayerState.getPlayerState(player) == PlayerState.SMP)
 		{
-			((EntityPlayerMP)player).serverForThisPlayer.sendPacketToPlayer(packet);
+			((EntityPlayerMP)player).playerNetServerHandler.sendPacketToPlayer(packet);
 		}
 	}
 	
@@ -101,7 +101,7 @@ public class CommonProxy implements IGuiHandler{
 
 		if(MinecraftPlayerState.getPlayerState(player) == PlayerState.SMP)
 		{
-			((EntityPlayerMP)player).serverForThisPlayer.sendPacketToPlayer(packet);
+			((EntityPlayerMP)player).playerNetServerHandler.sendPacketToPlayer(packet);
 		}
 	}
 	
@@ -113,7 +113,7 @@ public class CommonProxy implements IGuiHandler{
 		packet.length = packet.data.length;
 		if(MinecraftPlayerState.getPlayerState(player) == PlayerState.SMP)
 		{
-			((EntityPlayerMP)player).serverForThisPlayer.sendPacketToPlayer(packet);
+			((EntityPlayerMP)player).playerNetServerHandler.sendPacketToPlayer(packet);
 		}
 	}
 	
@@ -125,7 +125,7 @@ public class CommonProxy implements IGuiHandler{
 		packet.length = packet.data.length;
 		if(MinecraftPlayerState.getPlayerState(player) == PlayerState.SMP)
 		{
-			((EntityPlayerMP)player).serverForThisPlayer.sendPacketToPlayer(packet);
+			((EntityPlayerMP)player).playerNetServerHandler.sendPacketToPlayer(packet);
 		}
 	}
 	

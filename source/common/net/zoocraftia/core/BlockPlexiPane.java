@@ -20,7 +20,7 @@ public class BlockPlexiPane extends BlockPane
     {
         super(par1, par2, par3, par4Material, false);
         this.sideTextureIndex = par3;
-        this.setCreativeTab(CreativeTabs.tabDeco);
+        this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 
     public String getTextureFile()

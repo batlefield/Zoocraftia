@@ -4,6 +4,7 @@ import net.minecraft.src.EntityLiving;
 import net.minecraft.src.World;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.living.LivingSpecialSpawnEvent;
 import net.zoocraftia.api.BaseEntity;
 
@@ -15,7 +16,7 @@ public class EntitySpawnListener {
 		if(event.entityLiving instanceof BaseEntity)
 		{
 			((BaseEntity)event.entityLiving).setSexRandomly();
-			event.setHandeled();
+			event.setResult(Result.ALLOW);
 		}
 	}
 	

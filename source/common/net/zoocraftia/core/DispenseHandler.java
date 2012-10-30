@@ -14,7 +14,7 @@ public class DispenseHandler implements IDispenserHandler{
 		if (item.itemID == ZoocraftiaItems.dart.shiftedIndex)
         {
             DartEntity var28 = new DartEntity(world, x, y, z);
-            var28.setArrowHeading((double)xVelocity, 0.10000000149011612D, (double)zVelocity, 1.1F, (float)6);
+            var28.setThrowableHeading((double)xVelocity, 0.10000000149011612D, (double)zVelocity, 1.1F, (float)6);
             var28.canBePickedUp = 1;
             world.spawnEntityInWorld(var28);
             world.playAuxSFX(1002, MathHelper.floor_double(x), MathHelper.floor_double(y), MathHelper.floor_double(z), 0);

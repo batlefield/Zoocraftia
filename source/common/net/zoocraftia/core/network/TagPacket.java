@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 import net.minecraft.src.Entity;
 import net.minecraft.src.EntityList;
 import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.NetworkManager;
+import net.minecraft.src.INetworkManager;
 import net.zoocraftia.api.Zoocraftia;
 
 import com.google.common.io.ByteArrayDataInput;
@@ -55,7 +55,7 @@ public class TagPacket extends ZoocraftiaPacket{
 	}
 
 	@Override
-	public void execute(NetworkManager network, Player player) {
+	public void execute(INetworkManager network, Player player) {
 		Zoocraftia.TAGGED_MANAGER.setTagged((EntityPlayer) player, tagged);
 	}
 

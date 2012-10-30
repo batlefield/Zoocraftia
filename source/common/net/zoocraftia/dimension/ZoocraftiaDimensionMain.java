@@ -33,7 +33,7 @@ public class ZoocraftiaDimensionMain implements IZoocraftiaPlugin{
 	public static int getOrCreateBlockID(String block, int id)
 	{
 		config.load();
-		Property prop = config.getOrCreateBlockIdProperty(block, id);
+		Property prop = config.getBlock(block, id);
 		config.save();
 		if(!prop.isIntValue())
 		{
@@ -45,7 +45,7 @@ public class ZoocraftiaDimensionMain implements IZoocraftiaPlugin{
 	public static int getOrCreateItemID(String item, int id)
 	{
 		config.load();
-		Property prop = config.getOrCreateIntProperty(item, config.CATEGORY_ITEM, id);
+		Property prop = config.getItem(item, id);
 		config.save();
 		if(!prop.isIntValue())
 		{
@@ -57,7 +57,7 @@ public class ZoocraftiaDimensionMain implements IZoocraftiaPlugin{
 	public static int getOrCreateIntegerProperty(String props, int id, String comment)
 	{
 		config.load();
-		Property prop = config.getOrCreateIntProperty(props, config.CATEGORY_GENERAL, id);
+		Property prop = config.get(config.CATEGORY_GENERAL, props, id);
 		config.save();
 		if(!prop.isIntValue())
 		{

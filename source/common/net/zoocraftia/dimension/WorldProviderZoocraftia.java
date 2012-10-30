@@ -9,33 +9,39 @@ import net.minecraft.src.WorldProviderHell;
 
 public class WorldProviderZoocraftia extends WorldProvider
 {
+	public WorldProviderZoocraftia()
+	{
+		setDimension(ZoocraftiaDimensionMain.dimensionID);
+	}
+	
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new ZoocraftiaChunkManager(this.worldObj);
+    }
+    
+    public IChunkProvider getChunkProvider()
+    {
+        return new ChunkProviderZoocraftia(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
     }
     
     public String getWelcomeMessage()
     {
         return "Entering Zoocraftia";
     }
-
-    /**
-     * A Message to display to the user when they transfer out of this dismension.
-     *
-     * @return The message to be displayed
-     */
+    
     public String getDepartMessage()
     {
         return "Leaving zoocraftia";
     }
-    
-    public IChunkProvider getChunkProvider()
-    {
-        return new ChunkProviderZoocraftia(this.worldObj, this.worldObj.getSeed(), true);
-    }
 
-    public String func_80007_l()
+    public String getSaveFolder()
+    {
+    	return "DIM-ZOO";
+    }
+    
+    public String getDimensionName()
     {
         return "Zoocraftia";
     }
+
 }

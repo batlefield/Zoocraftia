@@ -5,6 +5,7 @@ import net.minecraft.src.ItemStack;
 import net.minecraft.src.MovingObjectPosition;
 import net.minecraft.src.World;
 import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.zoocraftia.core.ZoocraftiaBlocks;
 import net.zoocraftia.core.ZoocraftiaItems;
@@ -22,7 +23,7 @@ public class FillBucketListener {
     	}
 
     	event.result=result;
-    	event.setHandeled();
+    	event.setResult(Result.ALLOW);
     	
     }
     
