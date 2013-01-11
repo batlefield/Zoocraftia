@@ -1,0 +1,70 @@
+[
+{
+  "modid": "Zoocraftia",
+  "name": "Zoocraftia Core",
+  "description": "Zoocraftia is a mod that adds many new zoo oriented features in game that will help you create the zoo you always wanted. The basic idea goes around the Zoo tycoon mod, but many things are different.",
+  "version": "1.0.0",
+  "credits": "Created by battlefield",
+  "logoFile": "/ZooLogo.png",
+  "mcversion": "1.4.6",
+  "url": "http://www2.arnes.si/~pmati/ZT.html",
+  "updateUrl": "http://www2.arnes.si/~pmati/ZTUC.html",
+  "authors": [ "battlefield", "AndrewSherman" ],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+},
+{
+  "modid": "ZoocraftiaFunctional",
+  "name": "Zoocraftia Functional",
+  "description": "Zoocraftia is a mod that adds many new zoo oriented features in game that will help you create the zoo you always wanted. The basic idea goes around the Zoo tycoon mod, but many things are different.",
+  "version": "1.0.0",
+  "credits": "Created by battlefield",
+  "logoFile": "/ZooLogo.png",
+  "mcversion": "1.4.6",
+  "url": "http://www2.arnes.si/~pmati/ZT.html",
+  "updateUrl": "http://www2.arnes.si/~pmati/ZTUC.html",
+  "authors": [ "battlefield", "AndrewSherman" ],
+  "parent": "Zoocraftia",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+},
+{
+  "modid": "ZoocraftiaAnimals",
+  "name": "Zoocraftia Animals",
+  "description": "Zoocraftia is a mod that adds many new zoo oriented features in game that will help you create the zoo you always wanted. The basic idea goes around the Zoo tycoon mod, but many things are different.",
+  "version": "1.0.0",
+  "credits": "Created by battlefield",
+  "logoFile": "/ZooLogo.png",
+  "mcversion": "1.4.6",
+  "url": "http://www2.arnes.si/~pmati/ZT.html",
+  "updateUrl": "http://www2.arnes.si/~pmati/ZTUC.html",
+  "authors": [ "battlefield", "AndrewSherman" ],
+  "parent": "Zoocraftia",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+},
+{
+  "modid": "ZoocraftiaDimension",
+  "name": "Zoocraftia Dimension",
+  "description": "Zoocraftia is a mod that adds many new zoo oriented features in game that will help you create the zoo you always wanted. The basic idea goes around the Zoo tycoon mod, but many things are different.",
+  "version": "1.0.0",
+  "credits": "Created by battlefield",
+  "logoFile": "/ZooLogo.png",
+  "mcversion": "1.4.6",
+  "url": "http://www2.arnes.si/~pmati/ZT.html",
+  "updateUrl": "http://www2.arnes.si/~pmati/ZTUC.html",
+  "authors": [ "battlefield", "AndrewSherman" ],
+  "parent":"Zoocraftia",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
